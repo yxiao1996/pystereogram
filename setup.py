@@ -16,7 +16,7 @@ setup(
     url="https://github.com/yxiao1996/pystereogram",
     ext_modules=cythonize([Extension("compute_line", ["autostereogram/compute_line.pyx"])]),
     include_dirs=[numpy.get_include()],
-install_requires=[
+    install_requires=[
         'numpy>=1.19.2'
     ],
     zip_safe=False,
