@@ -2,28 +2,6 @@ import numpy as np
 cimport numpy as np
 DTYPE = np.int64
 ctypedef np.int_t DTYPE_t
-from autostereogram.param import StereogramLineTaskParameter
-
-def compute_stereogram_line_cython_impl_wrapper(params: StereogramLineTaskParameter):
-    return compute_stereogram_line(
-        params.image_data,
-        params.rand_data,
-        params.image_width,
-        params.rand_width,
-        params.rand_height,
-        params.y
-    )
-
-# TODO: remove this method after experiment with GIL
-def compute_stereogram_line_cython_impl_wrapper_with_gil(params: StereogramLineTaskParameter):
-    return compute_stereogram_line_with_gil(
-        params.image_data,
-        params.rand_data,
-        params.image_width,
-        params.rand_width,
-        params.rand_height,
-        params.y
-    )
 
 def compute_stereogram_line(np.ndarray image_data,
                             np.ndarray rand_data,

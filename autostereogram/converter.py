@@ -1,7 +1,37 @@
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from compute_line import compute_stereogram_line_cython_impl_wrapper, compute_stereogram_line
-from param import StereogramLineTaskParameter
+from compute_line import compute_stereogram_line, compute_stereogram_line_with_gil
+
+class StereogramLineTaskParameter:
+
+    def __init__(self, image_data, rand_data, image_width, rand_width, rand_height, y):
+        self.image_data = image_data    # 2-d numpy integer array
+        self.rand_data = rand_data      # 2-d numpy integer array
+        self.image_width = image_width  # integer
+        self.rand_width = rand_width    # integer
+        self.rand_height = rand_height  # integer
+        self.y = y                      # integer
+
+def compute_stereogram_line_cython_impl_wrapper(params: StereogramLineTaskParameter):
+    return compute_stereogram_line(
+        params.image_data,
+        params.rand_data,
+        params.image_width,
+        params.rand_width,
+        params.rand_height,
+        params.y
+    )
+
+# TODO: remove this method after experiment with GIL
+def compute_stereogram_line_cython_impl_wrapper_with_gil(params: StereogramLineTaskParameter):
+    return compute_stereogram_line_with_gil(
+        params.image_data,
+        params.rand_data,
+        params.image_width,
+        params.rand_width,
+        params.rand_height,
+        params.y
+    )
 
 class StereogramConverter:
 
