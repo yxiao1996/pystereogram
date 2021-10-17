@@ -2,12 +2,15 @@ from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
 import numpy
 
-with open("readme.md", 'r') as f:
-    long_description = f.read()
+try:
+    with open("readme.md", 'r') as f:
+        long_description = f.read()
+except:
+    long_description = ''
 
 setup(
     name='pystereogram',
-    version="0.0.7",
+    version="0.0.13",
     packages=find_packages(),
     author="Yu Xiao",
     description="A library supporting efficient stereogram image computation.",
@@ -20,4 +23,5 @@ setup(
         'numpy>=1.19.2'
     ],
     zip_safe=False,
+    package_data={"autostereogram": ["compute_line.pyx"]}
 )

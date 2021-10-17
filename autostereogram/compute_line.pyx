@@ -10,14 +10,14 @@ def compute_stereogram_line(np.ndarray image_data,
                             int rand_height,
                             int y):
 
-    assert image_data.dtype == DTYPE
-    assert rand_data.dtype == DTYPE
+    # assert image_data.dtype == DTYPE
+    # assert rand_data.dtype == DTYPE
 
     cdef int x_index, x
     cdef int y_index = np.mod(y, rand_height - 1)
     cdef long[:, :] image_data_view = image_data
     cdef long[:, :] rand_data_view = rand_data
-    cdef long[:] result = np.zeros((image_width), dtype=DTYPE)
+    cdef long[:] result = np.zeros((image_width), dtype=image_data.dtype)
     with nogil:
         # Start from the right most copt of the random seed
         for x in range(image_width - 1, image_width - rand_width - 1, -1):

@@ -4,5 +4,7 @@ build
 dist
 rgbd-scenes
 pystereogram.egg-info
+example/inputs
+example/outputs
 *.mp4
 *.so

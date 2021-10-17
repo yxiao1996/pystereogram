@@ -2,11 +2,16 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
 from skimage import color
+from skimage.draw import disk
 import time
+
+def draw_circle(image, y, x, r=5):
+    [rr, cc] = disk((y, x), r)
+    image[rr, cc] = 0
 
 if __name__ == "__main__":
     rand_size = 64
-    cube_image = mpimg.imread('./example/inputs/cube.jpg')
+    cube_image = mpimg.imread('./example/inputs/cat.png')
     image_data = np.array(color.rgb2gray(cube_image))
 
     # Scale the pixel values and reduce the depth
@@ -31,5 +36,7 @@ if __name__ == "__main__":
         for x in range(image_width - rand_width - 1, 0, -1):
             index = x + rand_width - image_data[y, x]
             image_data[y, x] = image_data[y, index]
+    draw_circle(image_data, image_height * 19 / 20, image_width / 2 - rand_size / 2)
+    draw_circle(image_data, image_height * 19 / 20, image_width / 2 + rand_size / 2)
     print(time.time() - start_time)
-    plt.imsave('./example/outputs/cube2.jpg', color.gray2rgb(image_data / 255))
+    plt.imsave('./example/outputs/cat.jpg', color.gray2rgb(image_data / 255))

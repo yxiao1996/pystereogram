@@ -1,6 +1,7 @@
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from compute_line import compute_stereogram_line, compute_stereogram_line_with_gil
+from skimage.draw import disk
 
 class StereogramLineTaskParameter:
 
@@ -42,7 +43,7 @@ class StereogramConverter:
         [self.rand_height, self.rand_width] = self.rand_data.shape
         self.executor = ThreadPoolExecutor(100)
 
-    def convert_depth_to_stereogram(self, image_data: np.array):
+    def convert_depth_to_stereogram(self, image_data: np.array, draw_helper_dots: bool = False):
 
         image_data = self._preprocess_image_data(image_data)
         [image_height, image_width] = image_data.shape
@@ -56,11 +57,12 @@ class StereogramConverter:
                 self.rand_height,
                 y)
             image_data[y, :] = line_result[:]
-
+        if (draw_helper_dots):
+            self._draw_helper_dots(image_data)
         return image_data
 
     # Convert a depth image stored in a numpy array to auto-stereogram
-    def convert_depth_to_stereogram_with_thread_pool(self, image_data: np.array):
+    def convert_depth_to_stereogram_with_thread_pool(self, image_data: np.array, draw_helper_dots: bool = False):
 
         image_data = self._preprocess_image_data(image_data)
         [image_height, image_width] = image_data.shape
@@ -86,7 +88,8 @@ class StereogramConverter:
             param = line_tasks[future]
             line_result = future.result()
             image_data[param.y, :] = line_result[:]
-
+        if (draw_helper_dots):
+            self._draw_helper_dots(image_data)
         return image_data
 
     def _preprocess_image_data(self, image_data: np.array):
@@ -108,6 +111,15 @@ class StereogramConverter:
             y
         ) for y in range(image_height)]
 
+    def _draw_helper_dots(self, image):
+        [image_height, image_width] = image.shape
+        self._draw_circle(image, image_height * 19 / 20, image_width / 2 - self.rand_size / 2)
+        self._draw_circle(image, image_height * 19 / 20, image_width / 2 + self.rand_size / 2)
+
+    def _draw_circle(self, image, y, x, r=5):
+        [rr, cc] = disk((y, x), r)
+        image[rr, cc] = 0
+
 if __name__ == "__main__":
     from skimage import color
     import matplotlib.image as mpimg
@@ -118,8 +130,9 @@ if __name__ == "__main__":
         source_image = color.rgb2gray(source_image)
     image_data = np.array(source_image * 255, dtype=int)
 
-    converter = StereogramConverter()
+    converter = StereogramConverter(128)
     start_time = time.time()
-    image_data = converter.convert_depth_to_stereogram(image_data).astype(np.uint8)
+    image_data = image_data.max() - image_data
+    image_data = converter.convert_depth_to_stereogram_with_thread_pool(image_data, True).astype(np.uint8)
     print(time.time() - start_time)
     plt.imsave('./example/outputs/cube2.jpg', color.gray2rgb(image_data))

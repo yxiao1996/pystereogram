@@ -4,12 +4,12 @@
 {
     "distutils": {
         "depends": [],
-        "name": "autostereogram.compute_line",
+        "name": "compute_line",
         "sources": [
             "autostereogram/compute_line.pyx"
         ]
     },
-    "module_name": "autostereogram.compute_line"
+    "module_name": "compute_line"
 }
 END: Cython Metadata */
 
@@ -625,8 +625,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__autostereogram__compute_line
-#define __PYX_HAVE_API__autostereogram__compute_line
+#define __PYX_HAVE__compute_line
+#define __PYX_HAVE_API__compute_line
 /* Early includes */
 #include <string.h>
 #include <stdio.h>
@@ -1174,14 +1174,14 @@ typedef npy_double __pyx_t_5numpy_double_t;
  */
 typedef npy_longdouble __pyx_t_5numpy_longdouble_t;
 
-/* "autostereogram/compute_line.pyx":4
+/* "compute_line.pyx":4
  * cimport numpy as np
  * DTYPE = np.int64
  * ctypedef np.int_t DTYPE_t             # <<<<<<<<<<<<<<
  * 
  * def compute_stereogram_line(np.ndarray image_data,
  */
-typedef __pyx_t_5numpy_int_t __pyx_t_14autostereogram_12compute_line_DTYPE_t;
+typedef __pyx_t_5numpy_int_t __pyx_t_12compute_line_DTYPE_t;
 /* Declarations.proto */
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -2158,7 +2158,7 @@ static PyTypeObject *__pyx_ptype_5numpy_flexible = 0;
 static PyTypeObject *__pyx_ptype_5numpy_character = 0;
 static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 
-/* Module declarations from 'autostereogram.compute_line' */
+/* Module declarations from 'compute_line' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
 static PyTypeObject *__pyx_memoryview_type = 0;
@@ -2204,11 +2204,11 @@ static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_long = { "long", NULL, sizeof(long), { 0 }, 0, IS_UNSIGNED(long) ? 'U' : 'I', IS_UNSIGNED(long), 0 };
-#define __Pyx_MODULE_NAME "autostereogram.compute_line"
-extern int __pyx_module_is_main_autostereogram__compute_line;
-int __pyx_module_is_main_autostereogram__compute_line = 0;
+#define __Pyx_MODULE_NAME "compute_line"
+extern int __pyx_module_is_main_compute_line;
+int __pyx_module_is_main_compute_line = 0;
 
-/* Implementation of 'autostereogram.compute_line' */
+/* Implementation of 'compute_line' */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_ImportError;
 static PyObject *__pyx_builtin_ValueError;
@@ -2286,6 +2286,7 @@ static const char __pyx_k_MemoryError[] = "MemoryError";
 static const char __pyx_k_PickleError[] = "PickleError";
 static const char __pyx_k_image_width[] = "image_width";
 static const char __pyx_k_rand_height[] = "rand_height";
+static const char __pyx_k_compute_line[] = "compute_line";
 static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
 static const char __pyx_k_stringsource[] = "stringsource";
 static const char __pyx_k_pyx_getbuffer[] = "__pyx_getbuffer";
@@ -2308,7 +2309,6 @@ static const char __pyx_k_compute_stereogram_line[] = "compute_stereogram_line";
 static const char __pyx_k_contiguous_and_indirect[] = "<contiguous and indirect>";
 static const char __pyx_k_Cannot_index_with_type_s[] = "Cannot index with type '%s'";
 static const char __pyx_k_Invalid_shape_in_axis_d_d[] = "Invalid shape in axis %d: %d.";
-static const char __pyx_k_autostereogram_compute_line[] = "autostereogram.compute_line";
 static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cython.array";
 static const char __pyx_k_unable_to_allocate_array_data[] = "unable to allocate array data.";
 static const char __pyx_k_strided_and_direct_or_indirect[] = "<strided and direct or indirect>";
@@ -2356,13 +2356,13 @@ static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_n_s_View_MemoryView;
 static PyObject *__pyx_n_s_allocate_buffer;
 static PyObject *__pyx_n_s_array;
-static PyObject *__pyx_n_s_autostereogram_compute_line;
 static PyObject *__pyx_kp_s_autostereogram_compute_line_pyx;
 static PyObject *__pyx_n_s_base;
 static PyObject *__pyx_n_s_c;
 static PyObject *__pyx_n_u_c;
 static PyObject *__pyx_n_s_class;
 static PyObject *__pyx_n_s_cline_in_traceback;
+static PyObject *__pyx_n_s_compute_line;
 static PyObject *__pyx_n_s_compute_stereogram_line;
 static PyObject *__pyx_n_s_compute_stereogram_line_with_gil;
 static PyObject *__pyx_kp_s_contiguous_and_direct;
@@ -2442,8 +2442,8 @@ static PyObject *__pyx_n_s_x_index;
 static PyObject *__pyx_n_s_y;
 static PyObject *__pyx_n_s_y_index;
 static PyObject *__pyx_n_s_zeros;
-static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_line(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_image_data, PyArrayObject *__pyx_v_rand_data, int __pyx_v_image_width, int __pyx_v_rand_width, int __pyx_v_rand_height, int __pyx_v_y); /* proto */
-static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_line_with_gil(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_image_data, PyArrayObject *__pyx_v_rand_data, int __pyx_v_image_width, int __pyx_v_rand_width, int __pyx_v_rand_height, int __pyx_v_y); /* proto */
+static PyObject *__pyx_pf_12compute_line_compute_stereogram_line(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_image_data, PyArrayObject *__pyx_v_rand_data, int __pyx_v_image_width, int __pyx_v_rand_width, int __pyx_v_rand_height, int __pyx_v_y); /* proto */
+static PyObject *__pyx_pf_12compute_line_2compute_stereogram_line_with_gil(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_image_data, PyArrayObject *__pyx_v_rand_data, int __pyx_v_image_width, int __pyx_v_rand_width, int __pyx_v_rand_height, int __pyx_v_y); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *__pyx_v_self, PyObject *__pyx_v_shape, Py_ssize_t __pyx_v_itemsize, PyObject *__pyx_v_format, PyObject *__pyx_v_mode, int __pyx_v_allocate_buffer); /* proto */
 static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(struct __pyx_array_obj *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags); /* proto */
 static void __pyx_array___pyx_pf_15View_dot_MemoryView_5array_4__dealloc__(struct __pyx_array_obj *__pyx_v_self); /* proto */
@@ -2527,7 +2527,7 @@ static PyObject *__pyx_codeobj__24;
 static PyObject *__pyx_codeobj__31;
 /* Late includes */
 
-/* "autostereogram/compute_line.pyx":6
+/* "compute_line.pyx":6
  * ctypedef np.int_t DTYPE_t
  * 
  * def compute_stereogram_line(np.ndarray image_data,             # <<<<<<<<<<<<<<
@@ -2536,9 +2536,9 @@ static PyObject *__pyx_codeobj__31;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14autostereogram_12compute_line_1compute_stereogram_line(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_14autostereogram_12compute_line_1compute_stereogram_line = {"compute_stereogram_line", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_14autostereogram_12compute_line_1compute_stereogram_line, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14autostereogram_12compute_line_1compute_stereogram_line(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_12compute_line_1compute_stereogram_line(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_12compute_line_1compute_stereogram_line = {"compute_stereogram_line", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_12compute_line_1compute_stereogram_line, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_12compute_line_1compute_stereogram_line(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_image_data = 0;
   PyArrayObject *__pyx_v_rand_data = 0;
   int __pyx_v_image_width;
@@ -2633,13 +2633,13 @@ static PyObject *__pyx_pw_14autostereogram_12compute_line_1compute_stereogram_li
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("compute_stereogram_line", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 6, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("autostereogram.compute_line.compute_stereogram_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("compute_line.compute_stereogram_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_image_data), __pyx_ptype_5numpy_ndarray, 1, "image_data", 0))) __PYX_ERR(0, 6, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_rand_data), __pyx_ptype_5numpy_ndarray, 1, "rand_data", 0))) __PYX_ERR(0, 7, __pyx_L1_error)
-  __pyx_r = __pyx_pf_14autostereogram_12compute_line_compute_stereogram_line(__pyx_self, __pyx_v_image_data, __pyx_v_rand_data, __pyx_v_image_width, __pyx_v_rand_width, __pyx_v_rand_height, __pyx_v_y);
+  __pyx_r = __pyx_pf_12compute_line_compute_stereogram_line(__pyx_self, __pyx_v_image_data, __pyx_v_rand_data, __pyx_v_image_width, __pyx_v_rand_width, __pyx_v_rand_height, __pyx_v_y);
 
   /* function exit code */
   goto __pyx_L0;
@@ -2650,7 +2650,7 @@ static PyObject *__pyx_pw_14autostereogram_12compute_line_1compute_stereogram_li
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_line(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_image_data, PyArrayObject *__pyx_v_rand_data, int __pyx_v_image_width, int __pyx_v_rand_width, int __pyx_v_rand_height, int __pyx_v_y) {
+static PyObject *__pyx_pf_12compute_line_compute_stereogram_line(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_image_data, PyArrayObject *__pyx_v_rand_data, int __pyx_v_image_width, int __pyx_v_rand_width, int __pyx_v_rand_height, int __pyx_v_y) {
   int __pyx_v_x_index;
   int __pyx_v_x;
   int __pyx_v_y_index;
@@ -2662,77 +2662,26 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
-  int __pyx_t_4;
+  PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
-  PyObject *__pyx_t_6 = NULL;
-  int __pyx_t_7;
-  PyObject *__pyx_t_8 = NULL;
+  int __pyx_t_6;
+  PyObject *__pyx_t_7 = NULL;
+  __Pyx_memviewslice __pyx_t_8 = { 0, 0, { 0 }, { 0 }, { 0 } };
   __Pyx_memviewslice __pyx_t_9 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  __Pyx_memviewslice __pyx_t_10 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  long __pyx_t_10;
   long __pyx_t_11;
-  long __pyx_t_12;
+  Py_ssize_t __pyx_t_12;
   Py_ssize_t __pyx_t_13;
-  Py_ssize_t __pyx_t_14;
-  int __pyx_t_15;
+  int __pyx_t_14;
+  long __pyx_t_15;
   long __pyx_t_16;
-  long __pyx_t_17;
-  Py_ssize_t __pyx_t_18;
+  Py_ssize_t __pyx_t_17;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("compute_stereogram_line", 0);
 
-  /* "autostereogram/compute_line.pyx":13
- *                             int y):
- * 
- *     assert image_data.dtype == DTYPE             # <<<<<<<<<<<<<<
- *     assert rand_data.dtype == DTYPE
- * 
- */
-  #ifndef CYTHON_WITHOUT_ASSERTIONS
-  if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_image_data), __pyx_n_s_dtype); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 13, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_4)) {
-      PyErr_SetNone(PyExc_AssertionError);
-      __PYX_ERR(0, 13, __pyx_L1_error)
-    }
-  }
-  #endif
-
-  /* "autostereogram/compute_line.pyx":14
- * 
- *     assert image_data.dtype == DTYPE
- *     assert rand_data.dtype == DTYPE             # <<<<<<<<<<<<<<
- * 
- *     cdef int x_index, x
- */
-  #ifndef CYTHON_WITHOUT_ASSERTIONS
-  if (unlikely(!Py_OptimizeFlag)) {
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_rand_data), __pyx_n_s_dtype); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 14, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_4)) {
-      PyErr_SetNone(PyExc_AssertionError);
-      __PYX_ERR(0, 14, __pyx_L1_error)
-    }
-  }
-  #endif
-
-  /* "autostereogram/compute_line.pyx":17
+  /* "compute_line.pyx":17
  * 
  *     cdef int x_index, x
  *     cdef int y_index = np.mod(y, rand_height - 1)             # <<<<<<<<<<<<<<
@@ -2746,89 +2695,89 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyInt_From_long((__pyx_v_rand_height - 1)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = NULL;
-  __pyx_t_7 = 0;
+  __pyx_t_4 = __Pyx_PyInt_From_long((__pyx_v_rand_height - 1)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = NULL;
+  __pyx_t_6 = 0;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_6)) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_6);
+      __Pyx_INCREF(__pyx_t_5);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_3, function);
-      __pyx_t_7 = 1;
+      __pyx_t_6 = 1;
     }
   }
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
-    PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_2, __pyx_t_5};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
-    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+    PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else
   #endif
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
-    PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_2, __pyx_t_5};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
-    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+    PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else
   #endif
   {
-    __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 17, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    if (__pyx_t_6) {
-      __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 17, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    if (__pyx_t_5) {
+      __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
     }
     __Pyx_GIVEREF(__pyx_t_2);
-    PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_7, __pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_5);
-    PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_5);
+    PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_6, __pyx_t_2);
+    __Pyx_GIVEREF(__pyx_t_4);
+    PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_4);
     __pyx_t_2 = 0;
-    __pyx_t_5 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+    __pyx_t_4 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_y_index = __pyx_t_7;
+  __pyx_v_y_index = __pyx_t_6;
 
-  /* "autostereogram/compute_line.pyx":18
+  /* "compute_line.pyx":18
  *     cdef int x_index, x
  *     cdef int y_index = np.mod(y, rand_height - 1)
  *     cdef long[:, :] image_data_view = image_data             # <<<<<<<<<<<<<<
  *     cdef long[:, :] rand_data_view = rand_data
- *     cdef long[:] result = np.zeros((image_width), dtype=DTYPE)
+ *     cdef long[:] result = np.zeros((image_width), dtype=image_data.dtype)
  */
-  __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_dsds_long(((PyObject *)__pyx_v_image_data), PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 18, __pyx_L1_error)
-  __pyx_v_image_data_view = __pyx_t_9;
-  __pyx_t_9.memview = NULL;
-  __pyx_t_9.data = NULL;
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dsds_long(((PyObject *)__pyx_v_image_data), PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_v_image_data_view = __pyx_t_8;
+  __pyx_t_8.memview = NULL;
+  __pyx_t_8.data = NULL;
 
-  /* "autostereogram/compute_line.pyx":19
+  /* "compute_line.pyx":19
  *     cdef int y_index = np.mod(y, rand_height - 1)
  *     cdef long[:, :] image_data_view = image_data
  *     cdef long[:, :] rand_data_view = rand_data             # <<<<<<<<<<<<<<
- *     cdef long[:] result = np.zeros((image_width), dtype=DTYPE)
+ *     cdef long[:] result = np.zeros((image_width), dtype=image_data.dtype)
  *     with nogil:
  */
-  __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_dsds_long(((PyObject *)__pyx_v_rand_data), PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 19, __pyx_L1_error)
-  __pyx_v_rand_data_view = __pyx_t_9;
-  __pyx_t_9.memview = NULL;
-  __pyx_t_9.data = NULL;
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dsds_long(((PyObject *)__pyx_v_rand_data), PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_v_rand_data_view = __pyx_t_8;
+  __pyx_t_8.memview = NULL;
+  __pyx_t_8.data = NULL;
 
-  /* "autostereogram/compute_line.pyx":20
+  /* "compute_line.pyx":20
  *     cdef long[:, :] image_data_view = image_data
  *     cdef long[:, :] rand_data_view = rand_data
- *     cdef long[:] result = np.zeros((image_width), dtype=DTYPE)             # <<<<<<<<<<<<<<
+ *     cdef long[:] result = np.zeros((image_width), dtype=image_data.dtype)             # <<<<<<<<<<<<<<
  *     with nogil:
  *         # Start from the right most copt of the random seed
  */
@@ -2839,31 +2788,31 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_image_width); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_8 = PyTuple_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_7 = PyTuple_New(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
   __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1);
   __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_image_data), __pyx_n_s_dtype); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_10 = __Pyx_PyObject_to_MemoryviewSlice_ds_long(__pyx_t_5, PyBUF_WRITABLE); if (unlikely(!__pyx_t_10.memview)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_v_result = __pyx_t_10;
-  __pyx_t_10.memview = NULL;
-  __pyx_t_10.data = NULL;
+  __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_ds_long(__pyx_t_4, PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_v_result = __pyx_t_9;
+  __pyx_t_9.memview = NULL;
+  __pyx_t_9.data = NULL;
 
-  /* "autostereogram/compute_line.pyx":21
+  /* "compute_line.pyx":21
  *     cdef long[:, :] rand_data_view = rand_data
- *     cdef long[:] result = np.zeros((image_width), dtype=DTYPE)
+ *     cdef long[:] result = np.zeros((image_width), dtype=image_data.dtype)
  *     with nogil:             # <<<<<<<<<<<<<<
  *         # Start from the right most copt of the random seed
  *         for x in range(image_width - 1, image_width - rand_width - 1, -1):
@@ -2876,43 +2825,43 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
       #endif
       /*try:*/ {
 
-        /* "autostereogram/compute_line.pyx":23
+        /* "compute_line.pyx":23
  *     with nogil:
  *         # Start from the right most copt of the random seed
  *         for x in range(image_width - 1, image_width - rand_width - 1, -1):             # <<<<<<<<<<<<<<
  *             x_index = (x - image_data_view[y, x]) % (rand_width - 1)
  *             result[x] = rand_data_view[y_index, x_index]
  */
-        __pyx_t_11 = ((__pyx_v_image_width - __pyx_v_rand_width) - 1);
-        __pyx_t_12 = __pyx_t_11;
-        for (__pyx_t_7 = (__pyx_v_image_width - 1); __pyx_t_7 > __pyx_t_12; __pyx_t_7-=1) {
-          __pyx_v_x = __pyx_t_7;
+        __pyx_t_10 = ((__pyx_v_image_width - __pyx_v_rand_width) - 1);
+        __pyx_t_11 = __pyx_t_10;
+        for (__pyx_t_6 = (__pyx_v_image_width - 1); __pyx_t_6 > __pyx_t_11; __pyx_t_6-=1) {
+          __pyx_v_x = __pyx_t_6;
 
-          /* "autostereogram/compute_line.pyx":24
+          /* "compute_line.pyx":24
  *         # Start from the right most copt of the random seed
  *         for x in range(image_width - 1, image_width - rand_width - 1, -1):
  *             x_index = (x - image_data_view[y, x]) % (rand_width - 1)             # <<<<<<<<<<<<<<
  *             result[x] = rand_data_view[y_index, x_index]
  * 
  */
-          __pyx_t_13 = __pyx_v_y;
-          __pyx_t_14 = __pyx_v_x;
-          __pyx_t_15 = -1;
+          __pyx_t_12 = __pyx_v_y;
+          __pyx_t_13 = __pyx_v_x;
+          __pyx_t_14 = -1;
+          if (__pyx_t_12 < 0) {
+            __pyx_t_12 += __pyx_v_image_data_view.shape[0];
+            if (unlikely(__pyx_t_12 < 0)) __pyx_t_14 = 0;
+          } else if (unlikely(__pyx_t_12 >= __pyx_v_image_data_view.shape[0])) __pyx_t_14 = 0;
           if (__pyx_t_13 < 0) {
-            __pyx_t_13 += __pyx_v_image_data_view.shape[0];
-            if (unlikely(__pyx_t_13 < 0)) __pyx_t_15 = 0;
-          } else if (unlikely(__pyx_t_13 >= __pyx_v_image_data_view.shape[0])) __pyx_t_15 = 0;
-          if (__pyx_t_14 < 0) {
-            __pyx_t_14 += __pyx_v_image_data_view.shape[1];
-            if (unlikely(__pyx_t_14 < 0)) __pyx_t_15 = 1;
-          } else if (unlikely(__pyx_t_14 >= __pyx_v_image_data_view.shape[1])) __pyx_t_15 = 1;
-          if (unlikely(__pyx_t_15 != -1)) {
-            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_15);
+            __pyx_t_13 += __pyx_v_image_data_view.shape[1];
+            if (unlikely(__pyx_t_13 < 0)) __pyx_t_14 = 1;
+          } else if (unlikely(__pyx_t_13 >= __pyx_v_image_data_view.shape[1])) __pyx_t_14 = 1;
+          if (unlikely(__pyx_t_14 != -1)) {
+            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_14);
             __PYX_ERR(0, 24, __pyx_L4_error)
           }
-          __pyx_t_16 = (__pyx_v_x - (*((long *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_image_data_view.data + __pyx_t_13 * __pyx_v_image_data_view.strides[0]) ) + __pyx_t_14 * __pyx_v_image_data_view.strides[1]) ))));
-          __pyx_t_17 = (__pyx_v_rand_width - 1);
-          if (unlikely(__pyx_t_17 == 0)) {
+          __pyx_t_15 = (__pyx_v_x - (*((long *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_image_data_view.data + __pyx_t_12 * __pyx_v_image_data_view.strides[0]) ) + __pyx_t_13 * __pyx_v_image_data_view.strides[1]) ))));
+          __pyx_t_16 = (__pyx_v_rand_width - 1);
+          if (unlikely(__pyx_t_16 == 0)) {
             #ifdef WITH_THREAD
             PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
             #endif
@@ -2922,111 +2871,111 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
             #endif
             __PYX_ERR(0, 24, __pyx_L4_error)
           }
-          __pyx_v_x_index = __Pyx_mod_long(__pyx_t_16, __pyx_t_17);
+          __pyx_v_x_index = __Pyx_mod_long(__pyx_t_15, __pyx_t_16);
 
-          /* "autostereogram/compute_line.pyx":25
+          /* "compute_line.pyx":25
  *         for x in range(image_width - 1, image_width - rand_width - 1, -1):
  *             x_index = (x - image_data_view[y, x]) % (rand_width - 1)
  *             result[x] = rand_data_view[y_index, x_index]             # <<<<<<<<<<<<<<
  * 
  *         # Recalculate all the remaining pixels on the line
  */
-          __pyx_t_14 = __pyx_v_y_index;
-          __pyx_t_13 = __pyx_v_x_index;
-          __pyx_t_15 = -1;
-          if (__pyx_t_14 < 0) {
-            __pyx_t_14 += __pyx_v_rand_data_view.shape[0];
-            if (unlikely(__pyx_t_14 < 0)) __pyx_t_15 = 0;
-          } else if (unlikely(__pyx_t_14 >= __pyx_v_rand_data_view.shape[0])) __pyx_t_15 = 0;
+          __pyx_t_13 = __pyx_v_y_index;
+          __pyx_t_12 = __pyx_v_x_index;
+          __pyx_t_14 = -1;
           if (__pyx_t_13 < 0) {
-            __pyx_t_13 += __pyx_v_rand_data_view.shape[1];
-            if (unlikely(__pyx_t_13 < 0)) __pyx_t_15 = 1;
-          } else if (unlikely(__pyx_t_13 >= __pyx_v_rand_data_view.shape[1])) __pyx_t_15 = 1;
-          if (unlikely(__pyx_t_15 != -1)) {
-            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_15);
+            __pyx_t_13 += __pyx_v_rand_data_view.shape[0];
+            if (unlikely(__pyx_t_13 < 0)) __pyx_t_14 = 0;
+          } else if (unlikely(__pyx_t_13 >= __pyx_v_rand_data_view.shape[0])) __pyx_t_14 = 0;
+          if (__pyx_t_12 < 0) {
+            __pyx_t_12 += __pyx_v_rand_data_view.shape[1];
+            if (unlikely(__pyx_t_12 < 0)) __pyx_t_14 = 1;
+          } else if (unlikely(__pyx_t_12 >= __pyx_v_rand_data_view.shape[1])) __pyx_t_14 = 1;
+          if (unlikely(__pyx_t_14 != -1)) {
+            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_14);
             __PYX_ERR(0, 25, __pyx_L4_error)
           }
-          __pyx_t_18 = __pyx_v_x;
-          __pyx_t_15 = -1;
-          if (__pyx_t_18 < 0) {
-            __pyx_t_18 += __pyx_v_result.shape[0];
-            if (unlikely(__pyx_t_18 < 0)) __pyx_t_15 = 0;
-          } else if (unlikely(__pyx_t_18 >= __pyx_v_result.shape[0])) __pyx_t_15 = 0;
-          if (unlikely(__pyx_t_15 != -1)) {
-            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_15);
+          __pyx_t_17 = __pyx_v_x;
+          __pyx_t_14 = -1;
+          if (__pyx_t_17 < 0) {
+            __pyx_t_17 += __pyx_v_result.shape[0];
+            if (unlikely(__pyx_t_17 < 0)) __pyx_t_14 = 0;
+          } else if (unlikely(__pyx_t_17 >= __pyx_v_result.shape[0])) __pyx_t_14 = 0;
+          if (unlikely(__pyx_t_14 != -1)) {
+            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_14);
             __PYX_ERR(0, 25, __pyx_L4_error)
           }
-          *((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_18 * __pyx_v_result.strides[0]) )) = (*((long *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_rand_data_view.data + __pyx_t_14 * __pyx_v_rand_data_view.strides[0]) ) + __pyx_t_13 * __pyx_v_rand_data_view.strides[1]) )));
+          *((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_17 * __pyx_v_result.strides[0]) )) = (*((long *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_rand_data_view.data + __pyx_t_13 * __pyx_v_rand_data_view.strides[0]) ) + __pyx_t_12 * __pyx_v_rand_data_view.strides[1]) )));
         }
 
-        /* "autostereogram/compute_line.pyx":28
+        /* "compute_line.pyx":28
  * 
  *         # Recalculate all the remaining pixels on the line
  *         for x in range(image_width - rand_width - 1, 0, -1):             # <<<<<<<<<<<<<<
  *             x_index = x + rand_width - image_data_view[y, x]
  *             result[x] = result[x_index]
  */
-        for (__pyx_t_7 = ((__pyx_v_image_width - __pyx_v_rand_width) - 1); __pyx_t_7 > 0; __pyx_t_7-=1) {
-          __pyx_v_x = __pyx_t_7;
+        for (__pyx_t_6 = ((__pyx_v_image_width - __pyx_v_rand_width) - 1); __pyx_t_6 > 0; __pyx_t_6-=1) {
+          __pyx_v_x = __pyx_t_6;
 
-          /* "autostereogram/compute_line.pyx":29
+          /* "compute_line.pyx":29
  *         # Recalculate all the remaining pixels on the line
  *         for x in range(image_width - rand_width - 1, 0, -1):
  *             x_index = x + rand_width - image_data_view[y, x]             # <<<<<<<<<<<<<<
  *             result[x] = result[x_index]
  *     return np.array(result)
  */
-          __pyx_t_13 = __pyx_v_y;
-          __pyx_t_14 = __pyx_v_x;
-          __pyx_t_15 = -1;
+          __pyx_t_12 = __pyx_v_y;
+          __pyx_t_13 = __pyx_v_x;
+          __pyx_t_14 = -1;
+          if (__pyx_t_12 < 0) {
+            __pyx_t_12 += __pyx_v_image_data_view.shape[0];
+            if (unlikely(__pyx_t_12 < 0)) __pyx_t_14 = 0;
+          } else if (unlikely(__pyx_t_12 >= __pyx_v_image_data_view.shape[0])) __pyx_t_14 = 0;
           if (__pyx_t_13 < 0) {
-            __pyx_t_13 += __pyx_v_image_data_view.shape[0];
-            if (unlikely(__pyx_t_13 < 0)) __pyx_t_15 = 0;
-          } else if (unlikely(__pyx_t_13 >= __pyx_v_image_data_view.shape[0])) __pyx_t_15 = 0;
-          if (__pyx_t_14 < 0) {
-            __pyx_t_14 += __pyx_v_image_data_view.shape[1];
-            if (unlikely(__pyx_t_14 < 0)) __pyx_t_15 = 1;
-          } else if (unlikely(__pyx_t_14 >= __pyx_v_image_data_view.shape[1])) __pyx_t_15 = 1;
-          if (unlikely(__pyx_t_15 != -1)) {
-            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_15);
+            __pyx_t_13 += __pyx_v_image_data_view.shape[1];
+            if (unlikely(__pyx_t_13 < 0)) __pyx_t_14 = 1;
+          } else if (unlikely(__pyx_t_13 >= __pyx_v_image_data_view.shape[1])) __pyx_t_14 = 1;
+          if (unlikely(__pyx_t_14 != -1)) {
+            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_14);
             __PYX_ERR(0, 29, __pyx_L4_error)
           }
-          __pyx_v_x_index = ((__pyx_v_x + __pyx_v_rand_width) - (*((long *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_image_data_view.data + __pyx_t_13 * __pyx_v_image_data_view.strides[0]) ) + __pyx_t_14 * __pyx_v_image_data_view.strides[1]) ))));
+          __pyx_v_x_index = ((__pyx_v_x + __pyx_v_rand_width) - (*((long *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_image_data_view.data + __pyx_t_12 * __pyx_v_image_data_view.strides[0]) ) + __pyx_t_13 * __pyx_v_image_data_view.strides[1]) ))));
 
-          /* "autostereogram/compute_line.pyx":30
+          /* "compute_line.pyx":30
  *         for x in range(image_width - rand_width - 1, 0, -1):
  *             x_index = x + rand_width - image_data_view[y, x]
  *             result[x] = result[x_index]             # <<<<<<<<<<<<<<
  *     return np.array(result)
  * 
  */
-          __pyx_t_14 = __pyx_v_x_index;
-          __pyx_t_15 = -1;
-          if (__pyx_t_14 < 0) {
-            __pyx_t_14 += __pyx_v_result.shape[0];
-            if (unlikely(__pyx_t_14 < 0)) __pyx_t_15 = 0;
-          } else if (unlikely(__pyx_t_14 >= __pyx_v_result.shape[0])) __pyx_t_15 = 0;
-          if (unlikely(__pyx_t_15 != -1)) {
-            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_15);
-            __PYX_ERR(0, 30, __pyx_L4_error)
-          }
-          __pyx_t_13 = __pyx_v_x;
-          __pyx_t_15 = -1;
+          __pyx_t_13 = __pyx_v_x_index;
+          __pyx_t_14 = -1;
           if (__pyx_t_13 < 0) {
             __pyx_t_13 += __pyx_v_result.shape[0];
-            if (unlikely(__pyx_t_13 < 0)) __pyx_t_15 = 0;
-          } else if (unlikely(__pyx_t_13 >= __pyx_v_result.shape[0])) __pyx_t_15 = 0;
-          if (unlikely(__pyx_t_15 != -1)) {
-            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_15);
+            if (unlikely(__pyx_t_13 < 0)) __pyx_t_14 = 0;
+          } else if (unlikely(__pyx_t_13 >= __pyx_v_result.shape[0])) __pyx_t_14 = 0;
+          if (unlikely(__pyx_t_14 != -1)) {
+            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_14);
             __PYX_ERR(0, 30, __pyx_L4_error)
           }
-          *((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_13 * __pyx_v_result.strides[0]) )) = (*((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_14 * __pyx_v_result.strides[0]) )));
+          __pyx_t_12 = __pyx_v_x;
+          __pyx_t_14 = -1;
+          if (__pyx_t_12 < 0) {
+            __pyx_t_12 += __pyx_v_result.shape[0];
+            if (unlikely(__pyx_t_12 < 0)) __pyx_t_14 = 0;
+          } else if (unlikely(__pyx_t_12 >= __pyx_v_result.shape[0])) __pyx_t_14 = 0;
+          if (unlikely(__pyx_t_14 != -1)) {
+            __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_14);
+            __PYX_ERR(0, 30, __pyx_L4_error)
+          }
+          *((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_12 * __pyx_v_result.strides[0]) )) = (*((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_13 * __pyx_v_result.strides[0]) )));
         }
       }
 
-      /* "autostereogram/compute_line.pyx":21
+      /* "compute_line.pyx":21
  *     cdef long[:, :] rand_data_view = rand_data
- *     cdef long[:] result = np.zeros((image_width), dtype=DTYPE)
+ *     cdef long[:] result = np.zeros((image_width), dtype=image_data.dtype)
  *     with nogil:             # <<<<<<<<<<<<<<
  *         # Start from the right most copt of the random seed
  *         for x in range(image_width - 1, image_width - rand_width - 1, -1):
@@ -3050,7 +2999,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
       }
   }
 
-  /* "autostereogram/compute_line.pyx":31
+  /* "compute_line.pyx":31
  *             x_index = x + rand_width - image_data_view[y, x]
  *             result[x] = result[x_index]
  *     return np.array(result)             # <<<<<<<<<<<<<<
@@ -3060,32 +3009,32 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
   __Pyx_XDECREF(__pyx_r);
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_array); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_8);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_array); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_result, 1, (PyObject *(*)(char *)) __pyx_memview_get_long, (int (*)(char *, PyObject *)) __pyx_memview_set_long, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_8);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_7);
     if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_8);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
       __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_8, function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
     }
   }
-  __pyx_t_5 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_3, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_1);
+  __pyx_t_4 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_3, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_r = __pyx_t_5;
-  __pyx_t_5 = 0;
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_r = __pyx_t_4;
+  __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "autostereogram/compute_line.pyx":6
+  /* "compute_line.pyx":6
  * ctypedef np.int_t DTYPE_t
  * 
  * def compute_stereogram_line(np.ndarray image_data,             # <<<<<<<<<<<<<<
@@ -3098,12 +3047,12 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_7);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_8, 1);
   __PYX_XDEC_MEMVIEW(&__pyx_t_9, 1);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_10, 1);
-  __Pyx_AddTraceback("autostereogram.compute_line.compute_stereogram_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("compute_line.compute_stereogram_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_image_data_view, 1);
@@ -3114,7 +3063,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
   return __pyx_r;
 }
 
-/* "autostereogram/compute_line.pyx":34
+/* "compute_line.pyx":34
  * 
  * # TODO: remove this method after experiment with GIL
  * def compute_stereogram_line_with_gil(np.ndarray image_data,             # <<<<<<<<<<<<<<
@@ -3123,9 +3072,9 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_compute_stereogram_lin
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14autostereogram_12compute_line_3compute_stereogram_line_with_gil(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_14autostereogram_12compute_line_3compute_stereogram_line_with_gil = {"compute_stereogram_line_with_gil", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_14autostereogram_12compute_line_3compute_stereogram_line_with_gil, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14autostereogram_12compute_line_3compute_stereogram_line_with_gil(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_12compute_line_3compute_stereogram_line_with_gil(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_12compute_line_3compute_stereogram_line_with_gil = {"compute_stereogram_line_with_gil", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_12compute_line_3compute_stereogram_line_with_gil, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_12compute_line_3compute_stereogram_line_with_gil(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyArrayObject *__pyx_v_image_data = 0;
   PyArrayObject *__pyx_v_rand_data = 0;
   int __pyx_v_image_width;
@@ -3220,13 +3169,13 @@ static PyObject *__pyx_pw_14autostereogram_12compute_line_3compute_stereogram_li
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("compute_stereogram_line_with_gil", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 34, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("autostereogram.compute_line.compute_stereogram_line_with_gil", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("compute_line.compute_stereogram_line_with_gil", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_image_data), __pyx_ptype_5numpy_ndarray, 1, "image_data", 0))) __PYX_ERR(0, 34, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_rand_data), __pyx_ptype_5numpy_ndarray, 1, "rand_data", 0))) __PYX_ERR(0, 35, __pyx_L1_error)
-  __pyx_r = __pyx_pf_14autostereogram_12compute_line_2compute_stereogram_line_with_gil(__pyx_self, __pyx_v_image_data, __pyx_v_rand_data, __pyx_v_image_width, __pyx_v_rand_width, __pyx_v_rand_height, __pyx_v_y);
+  __pyx_r = __pyx_pf_12compute_line_2compute_stereogram_line_with_gil(__pyx_self, __pyx_v_image_data, __pyx_v_rand_data, __pyx_v_image_width, __pyx_v_rand_width, __pyx_v_rand_height, __pyx_v_y);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3237,7 +3186,7 @@ static PyObject *__pyx_pw_14autostereogram_12compute_line_3compute_stereogram_li
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_line_with_gil(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_image_data, PyArrayObject *__pyx_v_rand_data, int __pyx_v_image_width, int __pyx_v_rand_width, int __pyx_v_rand_height, int __pyx_v_y) {
+static PyObject *__pyx_pf_12compute_line_2compute_stereogram_line_with_gil(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_image_data, PyArrayObject *__pyx_v_rand_data, int __pyx_v_image_width, int __pyx_v_rand_width, int __pyx_v_rand_height, int __pyx_v_y) {
   int __pyx_v_x_index;
   int __pyx_v_x;
   int __pyx_v_y_index;
@@ -3269,7 +3218,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("compute_stereogram_line_with_gil", 0);
 
-  /* "autostereogram/compute_line.pyx":41
+  /* "compute_line.pyx":41
  *                             int y):
  * 
  *     assert image_data.dtype == DTYPE             # <<<<<<<<<<<<<<
@@ -3294,7 +3243,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   }
   #endif
 
-  /* "autostereogram/compute_line.pyx":42
+  /* "compute_line.pyx":42
  * 
  *     assert image_data.dtype == DTYPE
  *     assert rand_data.dtype == DTYPE             # <<<<<<<<<<<<<<
@@ -3319,7 +3268,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   }
   #endif
 
-  /* "autostereogram/compute_line.pyx":45
+  /* "compute_line.pyx":45
  * 
  *     cdef int x_index, x
  *     cdef int y_index = np.mod(y, rand_height - 1)             # <<<<<<<<<<<<<<
@@ -3388,7 +3337,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_y_index = __pyx_t_7;
 
-  /* "autostereogram/compute_line.pyx":46
+  /* "compute_line.pyx":46
  *     cdef int x_index, x
  *     cdef int y_index = np.mod(y, rand_height - 1)
  *     cdef long[:, :] image_data_view = image_data             # <<<<<<<<<<<<<<
@@ -3400,7 +3349,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   __pyx_t_9.memview = NULL;
   __pyx_t_9.data = NULL;
 
-  /* "autostereogram/compute_line.pyx":47
+  /* "compute_line.pyx":47
  *     cdef int y_index = np.mod(y, rand_height - 1)
  *     cdef long[:, :] image_data_view = image_data
  *     cdef long[:, :] rand_data_view = rand_data             # <<<<<<<<<<<<<<
@@ -3412,7 +3361,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   __pyx_t_9.memview = NULL;
   __pyx_t_9.data = NULL;
 
-  /* "autostereogram/compute_line.pyx":48
+  /* "compute_line.pyx":48
  *     cdef long[:, :] image_data_view = image_data
  *     cdef long[:, :] rand_data_view = rand_data
  *     cdef long[:] result = np.zeros((image_width), dtype=DTYPE)             # <<<<<<<<<<<<<<
@@ -3448,7 +3397,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   __pyx_t_10.memview = NULL;
   __pyx_t_10.data = NULL;
 
-  /* "autostereogram/compute_line.pyx":50
+  /* "compute_line.pyx":50
  *     cdef long[:] result = np.zeros((image_width), dtype=DTYPE)
  *     # Start from the right most copt of the random seed
  *     for x in range(image_width - 1, image_width - rand_width - 1, -1):             # <<<<<<<<<<<<<<
@@ -3460,7 +3409,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   for (__pyx_t_7 = (__pyx_v_image_width - 1); __pyx_t_7 > __pyx_t_12; __pyx_t_7-=1) {
     __pyx_v_x = __pyx_t_7;
 
-    /* "autostereogram/compute_line.pyx":51
+    /* "compute_line.pyx":51
  *     # Start from the right most copt of the random seed
  *     for x in range(image_width - 1, image_width - rand_width - 1, -1):
  *         x_index = (x - image_data_view[y, x]) % (rand_width - 1)             # <<<<<<<<<<<<<<
@@ -3490,7 +3439,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
     }
     __pyx_v_x_index = __Pyx_mod_long(__pyx_t_16, __pyx_t_17);
 
-    /* "autostereogram/compute_line.pyx":52
+    /* "compute_line.pyx":52
  *     for x in range(image_width - 1, image_width - rand_width - 1, -1):
  *         x_index = (x - image_data_view[y, x]) % (rand_width - 1)
  *         result[x] = rand_data_view[y_index, x_index]             # <<<<<<<<<<<<<<
@@ -3525,7 +3474,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
     *((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_18 * __pyx_v_result.strides[0]) )) = (*((long *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_rand_data_view.data + __pyx_t_14 * __pyx_v_rand_data_view.strides[0]) ) + __pyx_t_13 * __pyx_v_rand_data_view.strides[1]) )));
   }
 
-  /* "autostereogram/compute_line.pyx":55
+  /* "compute_line.pyx":55
  * 
  *     # Recalculate all the remaining pixels on the line
  *     for x in range(image_width - rand_width - 1, 0, -1):             # <<<<<<<<<<<<<<
@@ -3535,7 +3484,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   for (__pyx_t_7 = ((__pyx_v_image_width - __pyx_v_rand_width) - 1); __pyx_t_7 > 0; __pyx_t_7-=1) {
     __pyx_v_x = __pyx_t_7;
 
-    /* "autostereogram/compute_line.pyx":56
+    /* "compute_line.pyx":56
  *     # Recalculate all the remaining pixels on the line
  *     for x in range(image_width - rand_width - 1, 0, -1):
  *         x_index = x + rand_width - image_data_view[y, x]             # <<<<<<<<<<<<<<
@@ -3559,7 +3508,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
     }
     __pyx_v_x_index = ((__pyx_v_x + __pyx_v_rand_width) - (*((long *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_image_data_view.data + __pyx_t_13 * __pyx_v_image_data_view.strides[0]) ) + __pyx_t_14 * __pyx_v_image_data_view.strides[1]) ))));
 
-    /* "autostereogram/compute_line.pyx":57
+    /* "compute_line.pyx":57
  *     for x in range(image_width - rand_width - 1, 0, -1):
  *         x_index = x + rand_width - image_data_view[y, x]
  *         result[x] = result[x_index]             # <<<<<<<<<<<<<<
@@ -3588,7 +3537,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
     *((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_13 * __pyx_v_result.strides[0]) )) = (*((long *) ( /* dim=0 */ (__pyx_v_result.data + __pyx_t_14 * __pyx_v_result.strides[0]) )));
   }
 
-  /* "autostereogram/compute_line.pyx":58
+  /* "compute_line.pyx":58
  *         x_index = x + rand_width - image_data_view[y, x]
  *         result[x] = result[x_index]
  *     return np.array(result)             # <<<<<<<<<<<<<<
@@ -3621,7 +3570,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "autostereogram/compute_line.pyx":34
+  /* "compute_line.pyx":34
  * 
  * # TODO: remove this method after experiment with GIL
  * def compute_stereogram_line_with_gil(np.ndarray image_data,             # <<<<<<<<<<<<<<
@@ -3639,7 +3588,7 @@ static PyObject *__pyx_pf_14autostereogram_12compute_line_2compute_stereogram_li
   __Pyx_XDECREF(__pyx_t_8);
   __PYX_XDEC_MEMVIEW(&__pyx_t_9, 1);
   __PYX_XDEC_MEMVIEW(&__pyx_t_10, 1);
-  __Pyx_AddTraceback("autostereogram.compute_line.compute_stereogram_line_with_gil", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("compute_line.compute_stereogram_line_with_gil", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __PYX_XDEC_MEMVIEW(&__pyx_v_image_data_view, 1);
@@ -17807,7 +17756,7 @@ static PyBufferProcs __pyx_tp_as_buffer_array = {
 
 static PyTypeObject __pyx_type___pyx_array = {
   PyVarObject_HEAD_INIT(0, 0)
-  "autostereogram.compute_line.array", /*tp_name*/
+  "compute_line.array", /*tp_name*/
   sizeof(struct __pyx_array_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_array, /*tp_dealloc*/
@@ -17926,7 +17875,7 @@ static PyMethodDef __pyx_methods_Enum[] = {
 
 static PyTypeObject __pyx_type___pyx_MemviewEnum = {
   PyVarObject_HEAD_INIT(0, 0)
-  "autostereogram.compute_line.Enum", /*tp_name*/
+  "compute_line.Enum", /*tp_name*/
   sizeof(struct __pyx_MemviewEnum_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_Enum, /*tp_dealloc*/
@@ -18187,7 +18136,7 @@ static PyBufferProcs __pyx_tp_as_buffer_memoryview = {
 
 static PyTypeObject __pyx_type___pyx_memoryview = {
   PyVarObject_HEAD_INIT(0, 0)
-  "autostereogram.compute_line.memoryview", /*tp_name*/
+  "compute_line.memoryview", /*tp_name*/
   sizeof(struct __pyx_memoryview_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc_memoryview, /*tp_dealloc*/
@@ -18325,7 +18274,7 @@ static struct PyGetSetDef __pyx_getsets__memoryviewslice[] = {
 
 static PyTypeObject __pyx_type___pyx_memoryviewslice = {
   PyVarObject_HEAD_INIT(0, 0)
-  "autostereogram.compute_line._memoryviewslice", /*tp_name*/
+  "compute_line._memoryviewslice", /*tp_name*/
   sizeof(struct __pyx_memoryviewslice_obj), /*tp_basicsize*/
   0, /*tp_itemsize*/
   __pyx_tp_dealloc__memoryviewslice, /*tp_dealloc*/
@@ -18473,13 +18422,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_View_MemoryView, __pyx_k_View_MemoryView, sizeof(__pyx_k_View_MemoryView), 0, 0, 1, 1},
   {&__pyx_n_s_allocate_buffer, __pyx_k_allocate_buffer, sizeof(__pyx_k_allocate_buffer), 0, 0, 1, 1},
   {&__pyx_n_s_array, __pyx_k_array, sizeof(__pyx_k_array), 0, 0, 1, 1},
-  {&__pyx_n_s_autostereogram_compute_line, __pyx_k_autostereogram_compute_line, sizeof(__pyx_k_autostereogram_compute_line), 0, 0, 1, 1},
   {&__pyx_kp_s_autostereogram_compute_line_pyx, __pyx_k_autostereogram_compute_line_pyx, sizeof(__pyx_k_autostereogram_compute_line_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_base, __pyx_k_base, sizeof(__pyx_k_base), 0, 0, 1, 1},
   {&__pyx_n_s_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 0, 1, 1},
   {&__pyx_n_u_c, __pyx_k_c, sizeof(__pyx_k_c), 0, 1, 0, 1},
   {&__pyx_n_s_class, __pyx_k_class, sizeof(__pyx_k_class), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
+  {&__pyx_n_s_compute_line, __pyx_k_compute_line, sizeof(__pyx_k_compute_line), 0, 0, 1, 1},
   {&__pyx_n_s_compute_stereogram_line, __pyx_k_compute_stereogram_line, sizeof(__pyx_k_compute_stereogram_line), 0, 0, 1, 1},
   {&__pyx_n_s_compute_stereogram_line_with_gil, __pyx_k_compute_stereogram_line_with_gil, sizeof(__pyx_k_compute_stereogram_line_with_gil), 0, 0, 1, 1},
   {&__pyx_kp_s_contiguous_and_direct, __pyx_k_contiguous_and_direct, sizeof(__pyx_k_contiguous_and_direct), 0, 0, 1, 0},
@@ -18794,7 +18743,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
 
-  /* "autostereogram/compute_line.pyx":6
+  /* "compute_line.pyx":6
  * ctypedef np.int_t DTYPE_t
  * 
  * def compute_stereogram_line(np.ndarray image_data,             # <<<<<<<<<<<<<<
@@ -18806,7 +18755,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__21);
   __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(6, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_autostereogram_compute_line_pyx, __pyx_n_s_compute_stereogram_line, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 6, __pyx_L1_error)
 
-  /* "autostereogram/compute_line.pyx":34
+  /* "compute_line.pyx":34
  * 
  * # TODO: remove this method after experiment with GIL
  * def compute_stereogram_line_with_gil(np.ndarray image_data,             # <<<<<<<<<<<<<<
@@ -19252,14 +19201,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_autostereogram__compute_line) {
+  if (__pyx_module_is_main_compute_line) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name_2, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "autostereogram.compute_line")) {
-      if (unlikely(PyDict_SetItemString(modules, "autostereogram.compute_line", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "compute_line")) {
+      if (unlikely(PyDict_SetItemString(modules, "compute_line", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -19280,7 +19229,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "autostereogram/compute_line.pyx":1
+  /* "compute_line.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * DTYPE = np.int64
@@ -19290,7 +19239,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "autostereogram/compute_line.pyx":3
+  /* "compute_line.pyx":3
  * import numpy as np
  * cimport numpy as np
  * DTYPE = np.int64             # <<<<<<<<<<<<<<
@@ -19305,31 +19254,31 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_DTYPE, __pyx_t_2) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "autostereogram/compute_line.pyx":6
+  /* "compute_line.pyx":6
  * ctypedef np.int_t DTYPE_t
  * 
  * def compute_stereogram_line(np.ndarray image_data,             # <<<<<<<<<<<<<<
  *                             np.ndarray rand_data,
  *                             int image_width,
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_14autostereogram_12compute_line_1compute_stereogram_line, NULL, __pyx_n_s_autostereogram_compute_line); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_12compute_line_1compute_stereogram_line, NULL, __pyx_n_s_compute_line); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_compute_stereogram_line, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "autostereogram/compute_line.pyx":34
+  /* "compute_line.pyx":34
  * 
  * # TODO: remove this method after experiment with GIL
  * def compute_stereogram_line_with_gil(np.ndarray image_data,             # <<<<<<<<<<<<<<
  *                             np.ndarray rand_data,
  *                             int image_width,
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_14autostereogram_12compute_line_3compute_stereogram_line_with_gil, NULL, __pyx_n_s_autostereogram_compute_line); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_12compute_line_3compute_stereogram_line_with_gil, NULL, __pyx_n_s_compute_line); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_compute_stereogram_line_with_gil, __pyx_t_2) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "autostereogram/compute_line.pyx":1
+  /* "compute_line.pyx":1
  * import numpy as np             # <<<<<<<<<<<<<<
  * cimport numpy as np
  * DTYPE = np.int64
@@ -19500,11 +19449,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init autostereogram.compute_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init compute_line", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init autostereogram.compute_line");
+    PyErr_SetString(PyExc_ImportError, "init compute_line");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
