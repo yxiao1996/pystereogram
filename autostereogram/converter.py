@@ -44,7 +44,12 @@ class StereogramConverter:
         self.executor = ThreadPoolExecutor(100)
 
     def convert_depth_to_stereogram(self, image_data: np.array, draw_helper_dots: bool = False):
-
+        """
+        Use ABSIRDS algorithm to compute stereogram of an depth image.
+        :param image_data: the input depth image to compute stereogram.
+        :param draw_helper_dots: a boolean flag to decide whether to draw the helper black dots.
+        :return: the derived stereogram.
+        """
         image_data = self._preprocess_image_data(image_data)
         [image_height, image_width] = image_data.shape
 
@@ -61,9 +66,13 @@ class StereogramConverter:
             self._draw_helper_dots(image_data)
         return image_data
 
-    # Convert a depth image stored in a numpy array to auto-stereogram
     def convert_depth_to_stereogram_with_thread_pool(self, image_data: np.array, draw_helper_dots: bool = False):
-
+        """
+        Use ABSIRDS algorithm to compute stereogram of an depth image using multiple threads.
+        :param image_data: the input depth image to compute stereogram.
+        :param draw_helper_dots: a boolean flag to decide whether to draw the helper black dots.
+        :return: the derived stereogram.
+        """
         image_data = self._preprocess_image_data(image_data)
         [image_height, image_width] = image_data.shape
 

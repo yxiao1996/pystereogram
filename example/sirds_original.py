@@ -3,10 +3,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from skimage import color
 from skimage.draw import disk
+from skimage.transform import resize
 import time
 
 DPI = 72
-mu = 1 / 3.0
+mu = 1 / 99.0
 E = np.round(2.5 * DPI)
 def separation(z):
     return np.round((1 - mu * z) * E / (2 - mu * z))
@@ -17,8 +18,10 @@ def draw_circle(image, y, x, r=5):
     image[rr, cc] = 0
 
 def main():
-    cube_image = mpimg.imread('inputs/room.png')
-    image_data = np.array(color.rgb2gray(cube_image))
+    depth_image = mpimg.imread('inputs/cat-d.png')
+    color_image = mpimg.imread('inputs/cat-c.jpeg')
+    color_image = resize(color_image, (depth_image.shape[0], depth_image.shape[1]), anti_aliasing=True)
+    image_data = np.array(color.rgb2gray(depth_image))
 
     # Scale the pixel values to between 0 and 1
     image_data = image_data.max() - image_data
@@ -70,7 +73,7 @@ def main():
     draw_circle(stereogram, image_height * 19 / 20, image_width / 2 - far / 2)
     draw_circle(stereogram, image_height * 19 / 20, image_width / 2 + far / 2)
     print(time.time() - start_time)
-    plt.imsave('./outputs/room.jpg', color.gray2rgb(stereogram / 255))
+    plt.imsave('./outputs/cat-3.jpg', color.gray2rgb(stereogram / 255))
 
 if __name__ == '__main__':
     main()
