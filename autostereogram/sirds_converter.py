@@ -8,18 +8,20 @@ class SirdsConverter():
             self,
             image_data: np.array,
             draw_helper_dots: bool = False,
-            depth_of_field: float = 1 / 3.0
+            depth_of_field: float = 1 / 3.0,
+            dot_per_inch = 72
     ):
         """
         Use the original SIRDS algorithm to compute stereogram from depth image.
         paper: https://www.cs.waikato.ac.nz/~ihw/papers/94-HWT-SI-IHW-SIRDS-paper.pdf
         TODO: cythonize this code to make it faster.
         :param depth_of_field: a value between 0 and 1 to adjust the maximum depth of the stereogram. Depth goes to max as value approach 1.
+        :param dot_per_inch: DPI used to compute the stereogram.
         :param image_data: the input depth image to compute stereogram.
         :param draw_helper_dots: a boolean flag to decide whether to draw the helper black dots.
         :return: the derived stereogram.
         """
-        DPI = 72
+        DPI = dot_per_inch
         mu = depth_of_field
         E = np.round(2.5 * DPI)
 
