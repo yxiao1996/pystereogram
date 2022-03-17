@@ -22,3 +22,5 @@ result = converter.convert_depth_to_stereogram(image_data).astype(np.uint8)
 ### Reference
 
 https://www.mathworks.com/matlabcentral/fileexchange/27649-absird-for-matlab
+
+https://www.cs.waikato.ac.nz/~ihw/papers/94-HWT-SI-IHW-SIRDS-paper.pdf

@@ -1,6 +1,6 @@
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from compute_line import compute_stereogram_line, compute_stereogram_line_with_gil
+from compute_line import compute_stereogram_line
 from skimage.draw import disk
 
 class StereogramLineTaskParameter:
@@ -15,17 +15,6 @@ class StereogramLineTaskParameter:
 
 def compute_stereogram_line_cython_impl_wrapper(params: StereogramLineTaskParameter):
     return compute_stereogram_line(
-        params.image_data,
-        params.rand_data,
-        params.image_width,
-        params.rand_width,
-        params.rand_height,
-        params.y
-    )
-
-# TODO: remove this method after experiment with GIL
-def compute_stereogram_line_cython_impl_wrapper_with_gil(params: StereogramLineTaskParameter):
-    return compute_stereogram_line_with_gil(
         params.image_data,
         params.rand_data,
         params.image_width,
@@ -50,7 +39,7 @@ class StereogramConverter:
         :param draw_helper_dots: a boolean flag to decide whether to draw the helper black dots.
         :return: the derived stereogram.
         """
-        image_data = self._preprocess_image_data(image_data)
+        image_data = self._preprocess_image_data(image_data, self.rand_size)
         [image_height, image_width] = image_data.shape
 
         for y in range(image_height):
@@ -62,8 +51,32 @@ class StereogramConverter:
                 self.rand_height,
                 y)
             image_data[y, :] = line_result[:]
-        if (draw_helper_dots):
-            self._draw_helper_dots(image_data)
+        if draw_helper_dots:
+            self._draw_helper_dots(image_data, self.rand_size)
+        return image_data
+
+    def convert_depth_to_stereogram_with_texture(
+            self,
+            depth_map: np.array,
+            texture: np.array,
+            draw_helper_dots: bool = False):
+        """
+        Use ABSIRDS algorithm to compute stereogram of a depth image and a texture patch.
+        :param depth_map: the input depth image to compute stereogram.
+        :param texture: the texture patch of the stereogram.
+        :param draw_helper_dots: a boolean flag to decide whether to draw the helper black dots.
+        :return:
+        """
+
+        [image_height, image_width] = depth_map.shape
+        [texture_width, texture_height] = texture.shape
+        image_data = self._preprocess_image_data(depth_map, texture_width)
+
+        for y in range(image_height):
+            line_result = compute_stereogram_line(image_data, texture, image_width, texture_width, texture_height, y)
+            image_data[y, :] = line_result[:]
+        if draw_helper_dots:
+            self._draw_helper_dots(image_data, texture_width)
         return image_data
 
     def convert_depth_to_stereogram_with_thread_pool(self, image_data: np.array, draw_helper_dots: bool = False):
@@ -73,7 +86,7 @@ class StereogramConverter:
         :param draw_helper_dots: a boolean flag to decide whether to draw the helper black dots.
         :return: the derived stereogram.
         """
-        image_data = self._preprocess_image_data(image_data)
+        image_data = self._preprocess_image_data(image_data, self.rand_size)
         [image_height, image_width] = image_data.shape
 
         # Get the parameters for computing stereogram
@@ -97,16 +110,14 @@ class StereogramConverter:
             param = line_tasks[future]
             line_result = future.result()
             image_data[param.y, :] = line_result[:]
-        if (draw_helper_dots):
-            self._draw_helper_dots(image_data)
+        if draw_helper_dots:
+            self._draw_helper_dots(image_data, self.rand_size)
         return image_data
 
-    def _preprocess_image_data(self, image_data: np.array):
-        # Scale the pixel values and reduce the depth
-        # image_data = image_data - image_data.min()
-        # image_data = np.floor(image_data / image_data.max() * self.rand_size / 3)
+    def _preprocess_image_data(self, image_data: np.array, rand_size: int):
+        # Scale the pixel values and reduce the dept
         image_data = image_data.max() - image_data
-        image_data = np.floor(image_data / image_data.max() * self.rand_size / 3)
+        image_data = np.floor(image_data / image_data.max() * rand_size / 3)
         image_data = image_data.astype(int)
         return image_data
 
@@ -120,10 +131,10 @@ class StereogramConverter:
             y
         ) for y in range(image_height)]
 
-    def _draw_helper_dots(self, image):
+    def _draw_helper_dots(self, image: np.array, rand_size: int):
         [image_height, image_width] = image.shape
-        self._draw_circle(image, image_height * 19 / 20, image_width / 2 - self.rand_size / 2)
-        self._draw_circle(image, image_height * 19 / 20, image_width / 2 + self.rand_size / 2)
+        self._draw_circle(image, image_height * 19 / 20, image_width / 2 - rand_size / 2)
+        self._draw_circle(image, image_height * 19 / 20, image_width / 2 + rand_size / 2)
 
     def _draw_circle(self, image, y, x, r=5):
         [rr, cc] = disk((y, x), r)
