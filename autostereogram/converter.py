@@ -1,6 +1,6 @@
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from compute_line import compute_stereogram_line
+from compute_line import compute_stereogram_line, compute_stereogram_line_with_color
 from skimage.draw import disk
 
 class StereogramLineTaskParameter:
@@ -67,7 +67,7 @@ class StereogramConverter:
         :param draw_helper_dots: a boolean flag to decide whether to draw the helper black dots.
         :return:
         """
-
+        self._validate_input_type(depth_map, texture)
         [image_height, image_width] = depth_map.shape
         [texture_width, texture_height] = texture.shape
         image_data = self._preprocess_image_data(depth_map, texture_width)
@@ -78,6 +78,44 @@ class StereogramConverter:
         if draw_helper_dots:
             self._draw_helper_dots(image_data, texture_width)
         return image_data
+
+    def convert_depth_to_stereogram_with_rgb_texture(
+            self,
+            depth_map: np.array,
+            texture: np.array,
+            draw_helper_dots: bool = False):
+        """
+        Use ABSIRDS algorithm to compute stereogram of a depth image and a texture patch.
+        :param depth_map: the input depth image to compute stereogram.
+        :param texture: the texture patch of the stereogram(RGB image patch).
+        :param draw_helper_dots: a boolean flag to decide whether to draw the helper black dots.
+        :return:
+        """
+        self._validate_input_type(depth_map, texture)
+        if texture.ndim != 3:
+            raise Exception("Texture patch should be have 3 dimensions, i.e. [height, width, 3]")
+
+        [image_height, image_width] = depth_map.shape
+        [texture_width, texture_height, texture_num_channel] = texture.shape
+
+        if texture_num_channel != 3:
+            raise Exception("Texture patch should have 3 channels.")
+
+        image_data = self._preprocess_image_data(depth_map, texture_width)
+        stereogram = np.zeros((image_height, image_width, 3))
+        for y in range(image_height):
+            line_result = compute_stereogram_line_with_color(
+                image_data,
+                texture,
+                image_width,
+                texture_width,
+                texture_height,
+                y
+            )
+            stereogram[y, :, :] = line_result[:, :]
+        if draw_helper_dots:
+            self._draw_helper_dots(image_data, texture_width)
+        return stereogram
 
     def convert_depth_to_stereogram_with_thread_pool(self, image_data: np.array, draw_helper_dots: bool = False):
         """
@@ -114,6 +152,14 @@ class StereogramConverter:
             self._draw_helper_dots(image_data, self.rand_size)
         return image_data
 
+    def _validate_input_type(self, depth_map: np.array, texture: np.array):
+        if depth_map.dtype != np.int:
+            raise Exception("This method accept depth map with numpy integer values between 0-255, get data type: {}"
+                            .format(depth_map.dtype))
+        if texture.dtype != np.int:
+            raise Exception("This method accept texture with numpy integer values between 0-255, get data type: {}"
+                            .format(texture.dtype))
+
     def _preprocess_image_data(self, image_data: np.array, rand_size: int):
         # Scale the pixel values and reduce the dept
         image_data = image_data.max() - image_data
@@ -138,7 +184,11 @@ class StereogramConverter:
 
     def _draw_circle(self, image, y, x, r=5):
         [rr, cc] = disk((y, x), r)
-        image[rr, cc] = 0
+        image_num_dimensions = image.ndim
+        if image_num_dimensions == 2:
+            image[rr, cc] = 0
+        elif image_num_dimensions == 3:
+            image[rr, cc, :] = 0
 
 if __name__ == "__main__":
     from skimage import color

@@ -10,7 +10,7 @@ except:
 
 setup(
     name='pystereogram',
-    version="0.0.19",
+    version="0.0.20",
     packages=find_packages(),
     author="Yu Xiao",
     description="A library supporting efficient stereogram image computation.",

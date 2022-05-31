@@ -19,4 +19,9 @@ def create_pink_noise(patch_size):
             else:
                 pink_transformed[y, x] = pink_transformed[y, x] / np.sqrt(f_y[y] ** 2 + f_x[x] ** 2)
     pink_noise = fft.ifft2(pink_transformed)
-    return pink_noise
+
+    # Normalize the noise patch to 0-255
+    pink_noise = pink_noise - pink_noise.min()
+    pink_noise = (pink_noise / pink_noise.max()) * 255
+
+    return pink_noise.astype(int)
